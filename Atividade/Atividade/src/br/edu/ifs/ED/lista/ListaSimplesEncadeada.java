@@ -96,18 +96,18 @@ public class ListaSimplesEncadeada<T extends Comparable<T>> extends Lista<T> {
     @Override
     public T[] TransformarEmVetor() {
         int tamanho = getTamanho();
-        Integer[] vetor = new Integer[tamanho]; // cria um vetor de Integer
+        Integer[] vetor = new Integer[tamanho];
 
-        transformarEmVetorRecursivo(primeiro, vetor, 0); // Chama o método recursivo
+        transformarEmVetorRecursivo(primeiro, vetor, 0);
         return (T[]) vetor;
     }
 
     private void transformarEmVetorRecursivo(No<T> no, Integer[] vetor, int indice) {
         if (no == null) {
-            return; // Condição de parada para a recursão (fim da lista)
+            return;
         }
 
-        vetor[indice] = (Integer) no.dado; // Converte o dado para Integer e adiciona ao vetor
-        transformarEmVetorRecursivo(no.proximo, vetor, indice + 1); // Chama recursivamente para o próximo nó
+        vetor[indice] = (Integer) no.dado;
+        transformarEmVetorRecursivo(no.proximo, vetor, indice + 1);
     }
 }
